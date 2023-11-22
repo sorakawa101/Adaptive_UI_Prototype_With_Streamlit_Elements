@@ -21,17 +21,11 @@ with st.sidebar:
     media_url = st.text_input("Media URL", value="https://www.youtube.com/watch?v=vIQQR_yq-8I")
 
 
-layout = [
-    # Editor item is positioned in coordinates x=0 and y=0, and takes 6/12 columns and has a height of 3.
-    dashboard.Item("editor", 0, 0, 6, 3),
-    # Media item is positioned in coordinates x=0 and y=2, and takes 12/12 columns and has a height of 4 and is draggable and resizable.
-    dashboard.Item("media", 0, 1, 12, 4, isDraggable=True, isResizable=True, moved=False)
-]
-
+import layouts.layout as lo
 
 with elements("demo"):
 
-    with dashboard.Grid(layout):
+    with dashboard.Grid(lo.ld.layout):
 
         with mui.Card(key="editor", sx={"display": "flex", "flexDirection": "column"}):
             mui.CardHeader(title="Media Player", className="draggable")
