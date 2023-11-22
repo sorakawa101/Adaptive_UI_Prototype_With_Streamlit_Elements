@@ -1,0 +1,6 @@
+*.toml
+.DS_Store
+__pycache__/
+assets/
+*.png
+*.pyc
