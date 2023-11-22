@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 
-from streamlit_elements import elements, dashboard, mui, media
+from streamlit_elements import elements, dashboard, mui
 
 
 with st.sidebar:
@@ -22,25 +22,11 @@ with st.sidebar:
 
 
 import layouts.layout as lo
+import cards.card_demo as cd
 
 with elements("demo"):
 
     with dashboard.Grid(lo.ld.layout):
 
-        with mui.Card(key="editor", sx={"display": "flex", "flexDirection": "column"}):
-            mui.CardHeader(title="Media Player", className="draggable")
-            with mui.CardContent(sx={"flex": 1, "minHeight": 0}):
-
-                # This element is powered by ReactPlayer, it supports many more players other
-                # than YouTube. You can check it out there: https://github.com/cookpete/react-player#props
-
-                media.Player(url=media_url, width="100%", height="100%", controls=True)
-
-        with mui.Card(key="media", sx={"display": "flex", "flexDirection": "column"}):
-            mui.CardHeader(title="Media Player", className="draggable")
-            with mui.CardContent(sx={"flex": 1, "minHeight": 0}):
-
-                # This element is powered by ReactPlayer, it supports many more players other
-                # than YouTube. You can check it out there: https://github.com/cookpete/react-player#props
-
-                media.Player(url=media_url, width="100%", height="100%", controls=True)
+        cd.card_demo('media')
+        cd.card_demo('editor')
