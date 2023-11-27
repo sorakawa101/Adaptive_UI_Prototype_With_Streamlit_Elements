@@ -21,12 +21,12 @@ with st.sidebar:
     media_url = st.text_input("Media URL", value="https://www.youtube.com/watch?v=vIQQR_yq-8I")
 
 
-import layouts.layout as lo
-import cards.card_demo as cd
+import components.layout as ll
+import components.card_demo as ccd
 
 with elements("demo"):
 
-    with dashboard.Grid(lo.ld.layout):
+    with dashboard.Grid(ll.layout_demo):
 
-        cd.card_demo('media')
-        cd.card_demo('editor')
+        ccd.card_demo('media')
+        ccd.card_demo('editor')

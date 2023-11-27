@@ -1,3 +1,5 @@
+# Cardのパラメータを定義するファイル
+
 from streamlit_elements import mui
 
 def card_demo(kw):
