@@ -10,30 +10,27 @@ def set_page_config():
 
 
 from streamlit_elements import elements, dashboard
+import components.sidebar as cs
 
 def view_sidebar():
-    with st.sidebar:
-        st.title("🗓️ #30DaysOfStreamlit")
-        st.header("Day 27 - Streamlit Elements")
-        st.write("Build a draggable and resizable dashboard with Streamlit Elements.")
-        st.write("---")
+    cs.sidebar()
 
 
-import components.layout as ll
-import components.card_demo as ccd
+import components.layout as cl
+import components.card as cc
 
 def view_contents():
 
     with elements("contents"):
 
         # with dashboard.Grid(ll.layout_single_column):
-        with dashboard.Grid(ll.layout_multi_column):
+        with dashboard.Grid(cl.layout_multi_column):
         # with dashboard.Grid(ll.layout_grid):
 
-            ccd.card_text('text')
-            ccd.card_image('image')
-            ccd.card_video('video')
-            ccd.card_graph('graph')
+            cc.card_text('text')
+            cc.card_image('image')
+            cc.card_video('video')
+            cc.card_graph('graph')
 
 
 def main():
