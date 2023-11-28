@@ -5,8 +5,8 @@ from streamlit_elements import mui
 
 def sidebar():
     with st.sidebar:
-        navigation = input_navigation()
-        set_value_to_the_session_state("navigation", navigation)
+        media = input_media()
+        set_value_to_the_session_state("media", media)
 
         layout = input_layout()
         set_value_to_the_session_state("layout", layout)
@@ -26,7 +26,7 @@ def sidebar():
 
 # サイドバーからの入出力の動作確認テスト
 def sidebar_io_test():
-    st.write(get_value_from_the_session_state("navigation"))
+    st.write(get_value_from_the_session_state("media"))
     st.write(get_value_from_the_session_state("layout"))
     st.write(get_value_from_the_session_state("font_size"))
     st.write(get_value_from_the_session_state("color"))
@@ -48,15 +48,15 @@ def get_value_from_the_session_state(key):
     return st.session_state[key]
 
 
-# navigationの入力欄を設置し，入力値を返す関数
-def input_navigation():
-    navigation = st.multiselect(
-        "What's your favorite navigation?",
+# mediaの入力欄を設置し，入力値を返す関数
+def input_media():
+    media = st.multiselect(
+        "What's your favorite media?",
         ["Text", "Image", "Video", "Graph"],
         ["Text", "Image", "Video", "Graph"],
     )  # st.multiselect(label, selected, first-value)
 
-    return navigation
+    return media
 
 
 # layoutの入力欄を設置し，入力値を返す関数

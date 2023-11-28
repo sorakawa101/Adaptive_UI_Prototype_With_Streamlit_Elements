@@ -1,6 +1,6 @@
 # Cardのパラメータを定義するファイル
 
-from streamlit_elements import mui, media
+from streamlit_elements import mui
 
 def view_selected_media_card(media_list):
     if "Text" in media_list:
