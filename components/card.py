@@ -9,8 +9,6 @@ def view_selected_media_card(media_list):
         card_image('a_image')
     if "Video" in media_list:
         card_video('a_video')
-    if "Graph" in media_list:
-        card_graph('a_graph')
     else:
         pass
 
@@ -40,9 +38,3 @@ def card_image(kw):
 def card_video(kw):
     with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column"}):
         mui.CardHeader(title="Video")
-
-
-# * Graph カード
-def card_graph(kw):
-    with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column"}):
-        mui.CardHeader(title="Graph")

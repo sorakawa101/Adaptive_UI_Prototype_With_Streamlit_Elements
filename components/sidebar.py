@@ -1,7 +1,6 @@
 # サイドバーを用意するファイル
 
 import streamlit as st
-from streamlit_elements import mui
 
 def sidebar():
     with st.sidebar:
@@ -52,8 +51,8 @@ def get_value_from_the_session_state(key):
 def input_media():
     media = st.multiselect(
         "What's your favorite media?",
-        ["Text", "Image", "Video", "Graph"],
-        ["Text", "Image", "Video", "Graph"],
+        ["Text", "Image", "Video"],
+        ["Text", "Image", "Video"],
     )  # st.multiselect(label, selected, first-value)
 
     return media
@@ -63,8 +62,8 @@ def input_media():
 def input_layout():
     layout = st.radio(
         "What's your favorite layout",
-        ["Single Column", "Multi Column", "Grid"],
-        captions=["Single Column", "Multi Column", "Grid"],
+        ["Single Column", "Full Screen", "Grid"],
+        captions=["Single Column", "Full Screen", "Grid"],
     )  # st.radio(label, selected, captions)
 
     return layout

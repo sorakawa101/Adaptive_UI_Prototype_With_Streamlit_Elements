@@ -1,13 +1,13 @@
 # レイアウトのパラメータを定義するファイル
-
+import streamlit as st
 from streamlit_elements import dashboard
 
 
 def get_selected_layout(selected_layout):
     if "Single Column" in selected_layout:
         return layout_single_column
-    if "Multi Column" in selected_layout:
-        return layout_multi_column
+    if "Full Screen" in selected_layout:
+        return layout_full_screen
     if "Grid" in selected_layout:
         return layout_grid
     else:
@@ -24,26 +24,23 @@ layout_demo = [
 
 # * Single Column レイアウト
 layout_single_column = [
-    dashboard.Item("a_text", 0, 0, 12, 2, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("a_image", 0, 1, 12, 2, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("a_video", 0, 2, 12, 2, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("a_graph", 0, 3, 12, 2, isDraggable=False, isResizable=True, moved=False)
-]
-
-
-# * Multi Column レイアウト
-layout_multi_column = [
-    dashboard.Item("a_text", 0, 0, 3, 5, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("a_image", 3, 0, 3, 5, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("a_video", 6, 0, 3, 5, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("a_graph", 9, 0, 3, 5, isDraggable=False, isResizable=True, moved=False)
+    dashboard.Item("a_text", 0, 0, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
+    dashboard.Item("a_image", 0, 1, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
+    dashboard.Item("a_video", 0, 2, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
 ]
 
 
 # * Grid レイアウト
 layout_grid = [
-    dashboard.Item("a_text", 0, 0, 6, 2.5, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("a_image", 6, 0, 6, 2.5, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("a_video", 0, 1, 6, 2.5, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("a_graph", 6, 1, 6, 2.5, isDraggable=True, isResizable=True, moved=False)
+    dashboard.Item("a_text", 0, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("a_image", 4, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("a_video", 8, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+]
+
+
+# * Full Screen レイアウト
+layout_full_screen = [
+    dashboard.Item("a_text", 0, 0, 12, 1, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("a_image", 0, 1, 6, 5, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("a_video", 6, 1, 6, 5, isDraggable=True, isResizable=True, moved=False)
 ]

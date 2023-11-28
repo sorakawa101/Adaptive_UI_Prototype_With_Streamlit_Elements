@@ -16,10 +16,33 @@ def set_page_config():
 
 
 def view_contents():
-    with elements("contents"):
 
-        with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-            cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+    if cs.get_value_from_the_session_state("layout") == "Full Screen":
+        tab1, tab2, tab3 = st.tabs(["Step1", "Step2", "Step3"])
+
+        with tab1:
+            with elements("contents"):
+
+                with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
+                    cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+
+        with tab2:
+            with elements("contents2"):
+
+                with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
+                    cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+        with tab3:
+            with elements("contents3"):
+
+                with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
+                    cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+
+
+    else:
+        with elements("contents"):
+
+            with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
+                cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
 
 
 def view_sidebar():
