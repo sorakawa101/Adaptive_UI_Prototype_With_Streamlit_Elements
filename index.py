@@ -23,7 +23,7 @@ def view_contents():
 
     with elements("contents"):
 
-        with dashboard.Grid(cl.layout_multi_column):
+        with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
             cc.view_selected_media_card(cs.get_value_from_the_session_state("navigation"))
 
 def main():

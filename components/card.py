@@ -11,6 +11,8 @@ def view_selected_media_card(media_list):
         card_video('a_video')
     if "Graph" in media_list:
         card_graph('a_graph')
+    else:
+        pass
 
 
 # * デモ用のカード

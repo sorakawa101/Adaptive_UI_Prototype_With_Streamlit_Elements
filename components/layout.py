@@ -3,6 +3,17 @@
 from streamlit_elements import dashboard
 
 
+def get_selected_layout(selected_layout):
+    if "Single Column" in selected_layout:
+        return layout_single_column
+    if "Multi Column" in selected_layout:
+        return layout_multi_column
+    if "Grid" in selected_layout:
+        return layout_grid
+    else:
+        pass
+
+
 # * デモ用のレイアウト
 layout_demo = [
     # Editor item is positioned in coordinates x=0 and y=0, and takes 6/12 columns and has a height of 3.
@@ -33,6 +44,6 @@ layout_multi_column = [
 layout_grid = [
     dashboard.Item("a_text", 0, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
     dashboard.Item("a_image", 6, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("video", 0, 1, 6, 4, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("a_video", 0, 1, 6, 4, isDraggable=True, isResizable=True, moved=False),
     dashboard.Item("a_graph", 6, 1, 6, 4, isDraggable=True, isResizable=True, moved=False)
 ]
