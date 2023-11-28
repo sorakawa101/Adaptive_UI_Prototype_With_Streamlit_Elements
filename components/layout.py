@@ -13,26 +13,26 @@ layout_demo = [
 
 # * Single Column レイアウト
 layout_single_column = [
-    dashboard.Item("text", 0, 0, 12, 4, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("image", 0, 1, 12, 4, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("video", 0, 2, 12, 4, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("graph", 0, 3, 12, 4, isDraggable=False, isResizable=True, moved=False)
+    dashboard.Item("a_text", 0, 0, 12, 4, isDraggable=False, isResizable=True, moved=False),
+    dashboard.Item("a_image", 0, 1, 12, 4, isDraggable=False, isResizable=True, moved=False),
+    dashboard.Item("a_video", 0, 2, 12, 4, isDraggable=False, isResizable=True, moved=False),
+    dashboard.Item("a_graph", 0, 3, 12, 4, isDraggable=False, isResizable=True, moved=False)
 ]
 
 
 # * Multi Column レイアウト
 layout_multi_column = [
-    dashboard.Item("text", 0, 0, 3, 4, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("image", 3, 0, 3, 4, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("video", 6, 0, 3, 4, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("graph", 9, 0, 3, 4, isDraggable=False, isResizable=True, moved=False)
+    dashboard.Item("a_text", 0, 0, 3, 4, isDraggable=False, isResizable=True, moved=False),
+    dashboard.Item("a_image", 3, 0, 3, 4, isDraggable=False, isResizable=True, moved=False),
+    dashboard.Item("a_video", 6, 0, 3, 4, isDraggable=False, isResizable=True, moved=False),
+    dashboard.Item("a_graph", 9, 0, 3, 4, isDraggable=False, isResizable=True, moved=False)
 ]
 
 
 # * Grid レイアウト
 layout_grid = [
-    dashboard.Item("text", 0, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("image", 6, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("a_text", 0, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("a_image", 6, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
     dashboard.Item("video", 0, 1, 6, 4, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("graph", 6, 1, 6, 4, isDraggable=True, isResizable=True, moved=False)
+    dashboard.Item("a_graph", 6, 1, 6, 4, isDraggable=True, isResizable=True, moved=False)
 ]

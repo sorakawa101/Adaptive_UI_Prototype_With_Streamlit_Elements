@@ -23,15 +23,8 @@ def view_contents():
 
     with elements("contents"):
 
-        # with dashboard.Grid(ll.layout_single_column):
         with dashboard.Grid(cl.layout_multi_column):
-        # with dashboard.Grid(ll.layout_grid):
-
-            cc.card_text('text')
-            cc.card_image('image')
-            cc.card_video('video')
-            cc.card_graph('graph')
-
+            cc.view_selected_media_card(cs.get_value_from_the_session_state("navigation"))
 
 def main():
     set_page_config()

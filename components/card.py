@@ -2,6 +2,17 @@
 
 from streamlit_elements import mui, media
 
+def view_selected_media_card(media_list):
+    if "Text" in media_list:
+        card_text('a_text')
+    if "Image" in media_list:
+        card_image('a_image')
+    if "Video" in media_list:
+        card_video('a_video')
+    if "Graph" in media_list:
+        card_graph('a_graph')
+
+
 # * デモ用のカード
 def card_demo(kw):
     with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column"}):
