@@ -5,11 +5,11 @@ from streamlit_elements import dashboard
 
 def get_selected_layout(selected_layout):
     if "Single Column" in selected_layout:
-        return layout_single_column
+        return get_layout_single_column("demo_recipe")
     if "Full Screen" in selected_layout:
         return layout_full_screen
     if "Grid" in selected_layout:
-        return layout_grid
+        return get_layout_grid("demo_recipe")
     else:
         pass
 
@@ -23,24 +23,44 @@ layout_demo = [
 ]
 
 # * Single Column レイアウト
-layout_single_column = [
-    dashboard.Item("a_text", 0, 0, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("a_image", 0, 1, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
-    dashboard.Item("a_video", 0, 2, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
-]
+def get_layout_single_column(recipe):
+
+    if recipe == "demo_recipe":
+        layout_single_column = [
+            dashboard.Item("step1", 0, 0, 12, 2, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step2", 0, 1, 12, 2, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step3", 0, 2, 12, 2, isDraggable=True, isResizable=True, moved=False),
+
+            # dashboard.Item("a_text", 0, 0, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
+            # dashboard.Item("a_image", 0, 1, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
+            # dashboard.Item("a_video", 0, 2, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
+        ]
+
+    return layout_single_column
 
 
 # * Grid レイアウト
-layout_grid = [
-    dashboard.Item("a_text", 0, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("a_image", 4, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("a_video", 8, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
-]
+def get_layout_grid(recipe):
 
+    if recipe == "demo_recipe":
+
+        layout_grid = [
+            dashboard.Item("step1", 0, 0, 4, 4, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step2", 4, 0, 4, 4, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step3", 8, 0, 4, 4, isDraggable=True, isResizable=True, moved=False),
+
+            # dashboard.Item("a_text", 0, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+            # dashboard.Item("a_image", 4, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+            # dashboard.Item("a_video", 8, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+        ]
+
+    return layout_grid
 
 # * Full Screen レイアウト
 layout_full_screen = [
-    dashboard.Item("a_text", 0, 0, 12, 1, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("a_image", 0, 1, 6, 5, isDraggable=True, isResizable=True, moved=False),
-    dashboard.Item("a_video", 6, 1, 6, 5, isDraggable=True, isResizable=True, moved=False)
+    dashboard.Item("a_step", 0, 0, 12, 4, isDraggable=True, isResizable=True, moved=False),
+
+    # dashboard.Item("a_text", 0, 0, 12, 1, isDraggable=True, isResizable=True, moved=False),
+    # dashboard.Item("a_image", 0, 1, 6, 5, isDraggable=True, isResizable=True, moved=False),
+    # dashboard.Item("a_video", 6, 1, 6, 5, isDraggable=True, isResizable=True, moved=False)
 ]

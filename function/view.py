@@ -24,18 +24,18 @@ def view_contents():
             with elements("contents"):
 
                 with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-                    cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+                    cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"))
 
         with tab2:
             with elements("contents2"):
 
                 with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-                    cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+                    cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"))
         with tab3:
             with elements("contents3"):
 
                 with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-                    cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+                    cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"))
 
 
     else:
