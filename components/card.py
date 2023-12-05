@@ -3,13 +3,13 @@
 from streamlit_elements import mui
 
 def view_selected_media_card(media_list):
-    card_step("step1", media_list)
-    card_step("step2", media_list)
-    card_step("step3", media_list)
+    card_step("step1", media_list, "text1", "image1", "video1")
+    card_step("step2", media_list, "text2", "image2", "video2")
+    card_step("step3", media_list, "text3", "image3", "video3")
 
 
-def view_selected_media_card_on_tab(media_list):
-    card_step("a_step", media_list)
+def view_selected_media_card_on_tab(media_list, text, image, video):
+    card_step("a_step", media_list, text, image, video)
 
 
 # * デモ用のカード
@@ -22,21 +22,21 @@ def card_demo(kw):
 
 
 # * 手順カード
-def card_step(kw, media_list):
+def card_step(kw, media_list, text, image, video):
     with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column"}):
         mui.CardHeader(title=kw)
 
         if "Text" in media_list:
             with mui.CardContent(sx={"flex": 1, "minHeight": 0}):
-                mui.Typography("Text")
+                mui.Typography(text)
 
         if "Image" in media_list:
             with mui.CardContent(sx={"flex": 1, "minHeight": 0}):
-                mui.Typography("Image")
+                mui.Typography(image)
 
         if "Video" in media_list:
             with mui.CardContent(sx={"flex": 1, "minHeight": 0}):
-                mui.Typography("Video")
+                mui.Typography(video)
 
         else:
             pass
