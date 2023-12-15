@@ -4,6 +4,9 @@ import streamlit as st
 
 def sidebar():
     with st.sidebar:
+        recipe = input_recipe()
+        set_value_to_the_session_state("recipe", recipe)
+
         st.header("カスタマイズ")
 
         media = input_media()
@@ -30,6 +33,7 @@ def sidebar():
 
 # サイドバーからの入出力の動作確認テスト
 def sidebar_io_test():
+    st.write(get_value_from_the_session_state("recipe"))
     st.write(get_value_from_the_session_state("media"))
     st.write(get_value_from_the_session_state("layout"))
     st.write(get_value_from_the_session_state("font_size"))
@@ -50,6 +54,16 @@ def set_value_to_the_session_state(key, value):
 # keyを指定して，対応するsession_stateから入力値を取得する関数
 def get_value_from_the_session_state(key):
     return st.session_state[key]
+
+
+# mediaの入力欄を設置し，入力値を返す関数
+def input_recipe():
+    recipe = st.selectbox(
+        "⓪ レシピを選択",
+        ("Sample", "Recipe1", "Recipe2"),
+    )  # st.multiselect(label, selected, first-value)
+
+    return recipe
 
 
 # mediaの入力欄を設置し，入力値を返す関数

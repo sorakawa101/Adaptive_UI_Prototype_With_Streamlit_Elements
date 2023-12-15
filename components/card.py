@@ -2,13 +2,14 @@
 import streamlit as st
 from streamlit_elements import mui, media
 
-
+# Single ColumnとGrid用の表示関数
 def view_selected_media_card(media_list):
     card_step("step1", media_list, "text1", "image1", "video1")
     card_step("step2", media_list, "text2", "image2", "video2")
     card_step("step3", media_list, "text3", "image3", "video3")
 
 
+# Full Screen用の表示関数
 def view_selected_media_card_on_tab(media_list, text, image, video):
     card_step("a_step", media_list, text, image, video)
 

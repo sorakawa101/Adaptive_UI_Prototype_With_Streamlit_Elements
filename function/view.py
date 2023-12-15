@@ -16,6 +16,17 @@ def set_page_config():
 
 
 def view_contents():
+    selected_recipe = cs.get_value_from_the_session_state("recipe")
+
+    if selected_recipe == "Recipe1":
+        view_contents_recipe1()
+    elif selected_recipe == "Recipe2":
+        view_contents_recipe2()
+    else:
+        view_contents_sample()
+
+
+def view_contents_sample():
 
     if cs.get_value_from_the_session_state("layout") == "Full Screen":
         tab1, tab2, tab3 = st.tabs(["Step1", "Step2", "Step3"])
@@ -43,6 +54,14 @@ def view_contents():
 
             with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
                 cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+
+
+def view_contents_recipe1():
+    st.write("recipe1")
+
+
+def view_contents_recipe2():
+    st.write("recipe2")
 
 
 def view_sidebar():

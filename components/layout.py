@@ -27,9 +27,10 @@ def get_layout_single_column(recipe):
 
     if recipe == "demo_recipe":
         layout_single_column = [
-            dashboard.Item("step1", 0, 0, 12, 3, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step2", 0, 1, 12, 3, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step3", 0, 2, 12, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("All View", 0, 0, 12, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step1", 0, 1, 12, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step2", 0, 2, 12, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step3", 0, 3, 12, 3, isDraggable=True, isResizable=True, moved=False),
 
             # dashboard.Item("a_text", 0, 0, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
             # dashboard.Item("a_image", 0, 1, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
@@ -45,9 +46,10 @@ def get_layout_grid(recipe):
     if recipe == "demo_recipe":
 
         layout_grid = [
-            dashboard.Item("step1", 0, 0, 4, 3, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step2", 4, 0, 4, 3, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step3", 8, 0, 4, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("All View", 0, 0, 4, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step1", 4, 0, 4, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step2", 0, 1, 4, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step3", 4, 1, 4, 3, isDraggable=True, isResizable=True, moved=False),
 
             # dashboard.Item("a_text", 0, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
             # dashboard.Item("a_image", 4, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
