@@ -4,6 +4,8 @@ import streamlit as st
 
 def sidebar():
     with st.sidebar:
+        st.header("カスタマイズ")
+
         media = input_media()
         set_value_to_the_session_state("media", media)
 
@@ -18,6 +20,9 @@ def sidebar():
 
         task_feature_set = input_task_feature_set()
         set_value_to_the_session_state("task_feature_set", task_feature_set)
+
+        st.write("⑥ 要素をドラッグして配置変更")
+        st.write("⑦ 要素の右下からリサイズ")
 
         # TODO デバッグ用なので後でコメントアウト
         sidebar_io_test()
@@ -50,7 +55,7 @@ def get_value_from_the_session_state(key):
 # mediaの入力欄を設置し，入力値を返す関数
 def input_media():
     media = st.multiselect(
-        "① 必要なメディアを選択してください(複数可)",
+        "① 必要なメディアを選択(複数可)",
         ["Text", "Image", "Video"],
         ["Text", "Image", "Video"],
     )  # st.multiselect(label, selected, first-value)
@@ -61,7 +66,7 @@ def input_media():
 # layoutの入力欄を設置し，入力値を返す関数
 def input_layout():
     layout = st.radio(
-        "② レイアウトを指定してください",
+        "② レイアウトを指定",
         ["Single Column", "Full Screen", "Grid"],
         captions=["Single Column", "Full Screen", "Grid"],
     )  # st.radio(label, selected, captions)
@@ -72,7 +77,7 @@ def input_layout():
 # font sizeの入力欄を設置し，入力値を返す関数
 def input_font_size():
     font_size = st.slider(
-        "③ フォントサイズを指定してください", 1, 5, 1
+        "③ フォントサイズを指定", 1, 5, 1
     )  # st.slider(label, min, max, step)
 
     return font_size
@@ -81,7 +86,7 @@ def input_font_size():
 # colorの入力欄を設置し，入力値を返す関数
 def input_color():
     color = st.color_picker(
-        "④ 色を指定してください", "#00f900"
+        "④ 色を指定", "#00f900"
     )  # st.color_pecker(label, first-value)
 
     return color
@@ -89,6 +94,6 @@ def input_color():
 
 # task_feature_setの入力欄を設置し，入力値を返す関数
 def input_task_feature_set():
-    task_feature_set = st.toggle("⑤ 情報量を抑制する")
+    task_feature_set = st.toggle("⑤ 情報量を抑制")
     return task_feature_set
 
