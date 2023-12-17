@@ -50,14 +50,14 @@ def view_contents_sample():
 
             with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
 
-                cc.view_selected_media_card(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), "sample")
+                cc.view_selected_media_card(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), cs.get_value_from_the_session_state("font_size"), "sample")
 
 
 # Full Screenにおけるタブの中身を表示する関数
 def view_contents_sample_tab_element(i):
     with elements("contents"+str(i)):
         with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-            cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), "image"+str(i), "video"+str(i), "sample", i)
+            cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), cs.get_value_from_the_session_state("font_size"), "image"+str(i), "video"+str(i), "sample", i)
 
 
 def view_contents_recipe1():

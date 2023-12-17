@@ -1,22 +1,22 @@
 # Cardのパラメータを定義するファイル
-from streamlit_elements import mui, media
+from streamlit_elements import mui, media, html
 
 import function.func as ff
 
 # Single ColumnとGrid用の表示関数
-def view_selected_media_card(media_list, task_feature_set, recipe):
+def view_selected_media_card(media_list, task_feature_set, font_size, recipe):
     if recipe == "sample":
         recipe_steps = 4
     else:
         recipe_steps = 0
 
     for i in range(recipe_steps):
-        card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], "image"+str(i), "video"+str(i))
+        set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, "image"+str(i), "video"+str(i))
 
 
 # Full Screen用の表示関数
-def view_selected_media_card_on_tab(media_list, task_feature_set, image, video, recipe, i):
-    card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], image, video)
+def view_selected_media_card_on_tab(media_list, task_feature_set, font_size, image, video, recipe, i):
+    set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, image, video)
 
 
 # * デモ用のカード
@@ -29,12 +29,13 @@ def card_demo(kw):
 
 
 # * 手順カード
-def card_step(kw, media_list, text, image, video):
+def set_card_step(kw, media_list, text, text_size, image, video):
     with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column"}):
         mui.CardHeader(title=kw)
         if "Text" in media_list:
             with mui.CardContent():
-                mui.Typography(text)
+                with mui.Typography:
+                    set_card_step_text_size(text, text_size)
 
         with mui.CardContent(sx={"display": "flex", "flexDirection": "row"}):
             if "Image" in media_list:
@@ -44,3 +45,16 @@ def card_step(kw, media_list, text, image, video):
             if "Video" in media_list:
                 with mui.CardContent(sx={"height": "300px", "width": "600px"}):
                     media.Player(url="https://youtu.be/j4lVwCwN4kI", width="100%", height="100%", controls=True)
+
+
+def set_card_step_text_size(text, size):
+    if size == 1:
+        html.h1(text)
+    elif size == 2:
+        html.h2(text)
+    elif size == 4:
+        html.h4(text)
+    elif size == 5:
+        html.h5(text)
+    else:
+        html.h3(text)
