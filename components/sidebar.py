@@ -93,7 +93,7 @@ def input_layout():
     layout = st.radio(
         "② レイアウトを指定",
         ["Single Column", "Full Screen", "Grid"],
-        captions=["Single Column", "Full Screen", "Grid"],
+        captions=["コンテンツを縦一列に静的配置", "コンテンツを画面一杯に静的配置", "コンテンツを複数列に動的配置"],
     )  # st.radio(label, selected, captions)
 
     return layout
@@ -111,7 +111,7 @@ def input_font_size():
 # colorの入力欄を設置し，入力値を返す関数
 def input_font_color():
     font_color = st.color_picker(
-        "④ 色を指定", "#000000"
+        "④ 色を指定(cf. red, #00ff23)", "#000000"
     )  # st.color_pecker(label, first-value)
 
     return font_color
