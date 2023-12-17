@@ -7,5 +7,9 @@ def get_texts(recipe, task_feature_set):
         return srct.abstract_list0
     elif recipe == "sample" and task_feature_set == "detail":
         return srct.detail_list0
+    elif recipe == "recipe1" and task_feature_set == "detail":
+        return srct.detail_list1
+    elif recipe == "recipe1" and task_feature_set == "detail":
+        return srct.detail_list1
     else:
         pass

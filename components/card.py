@@ -8,7 +8,7 @@ def view_selected_media_card(media_list, task_feature_set, font_size, font_color
     if recipe == "sample":
         recipe_steps = 4
     else:
-        recipe_steps = 0
+        recipe_steps = 10
 
     for i in range(recipe_steps):
         set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, font_color, "image"+str(i), "video"+str(i))
