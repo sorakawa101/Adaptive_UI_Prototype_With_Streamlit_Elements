@@ -55,7 +55,8 @@ def view_contents_sample():
         with elements("contents"):
 
             with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-                cc.view_selected_media_card(cs.get_value_from_the_session_state("media"), srct.abstract_list0, "sample")
+
+                cc.view_selected_media_card(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), "sample")
 
 
 def view_contents_recipe1():

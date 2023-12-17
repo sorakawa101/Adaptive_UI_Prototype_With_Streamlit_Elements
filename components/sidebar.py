@@ -120,5 +120,7 @@ def input_color():
 # task_feature_setの入力欄を設置し，入力値を返す関数
 def input_task_feature_set():
     task_feature_set = st.toggle("⑤ 情報量を抑制")
-    return task_feature_set
-
+    if task_feature_set:
+        return "abstract"
+    else:
+        return "detail"

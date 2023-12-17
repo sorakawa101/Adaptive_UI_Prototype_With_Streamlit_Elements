@@ -2,15 +2,17 @@
 import streamlit as st
 from streamlit_elements import mui, media
 
+import function.func as ff
+
 # Single ColumnとGrid用の表示関数
-def view_selected_media_card(media_list, text_list, recipe):
+def view_selected_media_card(media_list, task_feature_set, recipe):
     if recipe == "sample":
         recipe_steps = 4
     else:
         recipe_steps = 0
 
     for i in range(recipe_steps):
-        card_step("step"+str(i), media_list, text_list[i], "image"+str(i), "video"+str(i))
+        card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], "image"+str(i), "video"+str(i))
 
 
 # Full Screen用の表示関数
