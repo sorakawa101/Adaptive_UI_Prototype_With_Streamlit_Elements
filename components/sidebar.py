@@ -4,6 +4,9 @@ import streamlit as st
 
 def sidebar():
     with st.sidebar:
+        username = input_username()
+        set_value_to_the_session_state("username", username)
+
         recipe = input_recipe()
         set_value_to_the_session_state("recipe", recipe)
 
@@ -27,18 +30,21 @@ def sidebar():
         st.write("⑥ 要素をドラッグして配置変更")
         st.write("⑦ 要素の右下からリサイズ")
 
-        # TODO デバッグ用なので後でコメントアウト
-        sidebar_io_test()
+        sidebar_io_result()
 
 
-# サイドバーからの入出力の動作確認テスト
-def sidebar_io_test():
-    st.write(get_value_from_the_session_state("recipe"))
-    st.write(get_value_from_the_session_state("media"))
-    st.write(get_value_from_the_session_state("layout"))
-    st.write(get_value_from_the_session_state("font_size"))
-    st.write(get_value_from_the_session_state("color"))
-    st.write(get_value_from_the_session_state("task_feature_set"))
+# サイドバーからの入出力結果一覧
+# TODO 結果一覧をDBに送信
+def sidebar_io_result():
+    with st.expander("カスタマイズUI結果"):
+
+        st.write("ユーザー名："+str(get_value_from_the_session_state("username")))
+        st.write("⓪："+str(get_value_from_the_session_state("recipe")))
+        st.write("①："+str(get_value_from_the_session_state("media")))
+        st.write("②："+str(get_value_from_the_session_state("layout")))
+        st.write("③："+str(get_value_from_the_session_state("font_size")))
+        st.write("④："+str(get_value_from_the_session_state("color")))
+        st.write("⑤："+str(get_value_from_the_session_state("task_feature_set")))
 
 
 
@@ -54,6 +60,11 @@ def set_value_to_the_session_state(key, value):
 # keyを指定して，対応するsession_stateから入力値を取得する関数
 def get_value_from_the_session_state(key):
     return st.session_state[key]
+
+
+def input_username():
+    username = st.text_input("ユーザー名", "笹川")
+    return username
 
 
 # mediaの入力欄を設置し，入力値を返す関数
