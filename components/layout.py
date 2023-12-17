@@ -60,7 +60,10 @@ def get_layout_grid(recipe):
 
 # * Full Screen レイアウト
 layout_full_screen = [
-    dashboard.Item("a_step", 0, 0, 12, 3, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("step0", 0, 0, 12, 3, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("step1", 0, 0, 12, 3, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("step2", 0, 0, 12, 3, isDraggable=True, isResizable=True, moved=False),
+    dashboard.Item("step3", 0, 0, 12, 3, isDraggable=True, isResizable=True, moved=False),
 
     # dashboard.Item("a_text", 0, 0, 12, 1, isDraggable=True, isResizable=True, moved=False),
     # dashboard.Item("a_image", 0, 1, 6, 5, isDraggable=True, isResizable=True, moved=False),

@@ -16,7 +16,7 @@ def set_page_config():
         layout="wide",
     )
 
-
+# 選択されたレシピに応じてコンテンツを選択的に表示する関数
 def view_contents():
     selected_recipe = cs.get_value_from_the_session_state("recipe")
 
@@ -27,29 +27,23 @@ def view_contents():
     else:
         view_contents_sample()
 
-
+# サンプルレシピを表示する関数
 def view_contents_sample():
 
     if cs.get_value_from_the_session_state("layout") == "Full Screen":
-        tab1, tab2, tab3 = st.tabs(["Step1", "Step2", "Step3"])
+        tab0, tab1, tab2, tab3 = st.tabs(["Step0", "Step1", "Step2", "Step3"])
+
+        with tab0:
+            view_contents_sample_tab_element(0)
 
         with tab1:
-            with elements("contents"):
-
-                with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-                    cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"), "text1", "image1", "video1")
+            view_contents_sample_tab_element(1)
 
         with tab2:
-            with elements("contents2"):
+            view_contents_sample_tab_element(2)
 
-                with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-                    cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"), "text2", "image2", "video2")
         with tab3:
-            with elements("contents3"):
-
-                with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-                    cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"), "text3", "image3", "video3")
-
+            view_contents_sample_tab_element(3)
 
     else:
         with elements("contents"):
@@ -57,6 +51,13 @@ def view_contents_sample():
             with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
 
                 cc.view_selected_media_card(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), "sample")
+
+
+# Full Screenにおけるタブの中身を表示する関数
+def view_contents_sample_tab_element(i):
+    with elements("contents"+str(i)):
+        with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
+            cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), "image"+str(i), "video"+str(i), "sample", i)
 
 
 def view_contents_recipe1():

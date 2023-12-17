@@ -16,8 +16,8 @@ def view_selected_media_card(media_list, task_feature_set, recipe):
 
 
 # Full Screen用の表示関数
-def view_selected_media_card_on_tab(media_list, text, image, video):
-    card_step("a_step", media_list, text, image, video)
+def view_selected_media_card_on_tab(media_list, task_feature_set, image, video, recipe, i):
+    card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], image, video)
 
 
 # * デモ用のカード
