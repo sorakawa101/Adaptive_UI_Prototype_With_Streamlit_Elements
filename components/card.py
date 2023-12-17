@@ -11,12 +11,12 @@ def view_selected_media_card(media_list, task_feature_set, font_size, font_color
         recipe_steps = 10
 
     for i in range(recipe_steps):
-        set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, font_color, "image"+str(i), "video"+str(i))
+        set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, font_color, "image"+str(i), ff.get_videos(recipe)[i])
 
 
 # Full Screen用の表示関数
 def view_selected_media_card_on_tab(media_list, task_feature_set, font_size, font_color, image, video, recipe, i):
-    set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, font_color, image, video)
+    set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, font_color, image, ff.get_videos(recipe)[i])
 
 
 # * デモ用のカード
@@ -29,9 +29,9 @@ def card_demo(kw):
 
 
 # * 手順カード
-def set_card_step(kw, media_list, text, text_size, text_color, image, video):
+def set_card_step(kw, media_list, text, text_size, text_color, image, video_url):
     with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column", "color":f'{text_color}'}):
-        mui.CardHeader(title=kw)
+        # mui.CardHeader(title=kw)
         if "Text" in media_list:
             with mui.CardContent():
                 with mui.Typography:
@@ -44,7 +44,7 @@ def set_card_step(kw, media_list, text, text_size, text_color, image, video):
 
             if "Video" in media_list:
                 with mui.CardContent(sx={"height": "300px", "width": "600px"}):
-                    media.Player(url="https://youtu.be/j4lVwCwN4kI", width="100%", height="100%", controls=True)
+                    media.Player(url=video_url, width="100%", height="100%", controls=True)
 
 
 def set_card_step_text_size(text, size):

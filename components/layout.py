@@ -4,11 +4,11 @@ from streamlit_elements import dashboard
 
 def get_selected_layout(selected_layout):
     if "Single Column" in selected_layout:
-        return get_layout_single_column("demo_recipe")
+        return get_layout_single_column()
     if "Full Screen" in selected_layout:
         return layout_full_screen
     if "Grid" in selected_layout:
-        return get_layout_grid("demo_recipe")
+        return get_layout_grid()
     else:
         pass
 
@@ -22,50 +22,43 @@ layout_demo = [
 ]
 
 # * Single Column レイアウト
-def get_layout_single_column(recipe):
+def get_layout_single_column():
 
-    if recipe == "demo_recipe":
-        layout_single_column = [
-            dashboard.Item("step0", 0, 0, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step1", 0, 1, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step2", 0, 2, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step3", 0, 3, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step4", 0, 4, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step5", 0, 5, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step6", 0, 6, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step7", 0, 7, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step8", 0, 8, 12, 4, isDraggable=False, isResizable=True, moved=False),
-            dashboard.Item("step9", 0, 9, 12, 4, isDraggable=False, isResizable=True, moved=False),
-
-            # dashboard.Item("a_text", 0, 0, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
-            # dashboard.Item("a_image", 0, 1, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
-            # dashboard.Item("a_video", 0, 2, 12, 2.5, isDraggable=False, isResizable=True, moved=False),
-        ]
+    layout_single_column = [
+        dashboard.Item("step0", 0, 0, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step1", 0, 1, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step2", 0, 2, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step3", 0, 3, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step4", 0, 4, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step5", 0, 5, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step6", 0, 6, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step7", 0, 7, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step8", 0, 8, 12, 4, isDraggable=False, isResizable=True, moved=False),
+        dashboard.Item("step9", 0, 9, 12, 4, isDraggable=False, isResizable=True, moved=False),
+    ]
 
     return layout_single_column
 
 
 # * Grid レイアウト
-def get_layout_grid(recipe):
+def get_layout_grid():
 
-    if recipe == "demo_recipe":
+    layout_grid = [
+        dashboard.Item("step0", 0, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step1", 6, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step2", 0, 1, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step3", 6, 1, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step4", 0, 2, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step5", 6, 2, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step6", 0, 3, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step7", 6, 3, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step8", 0, 4, 6, 4, isDraggable=True, isResizable=True, moved=False),
+        dashboard.Item("step9", 6, 4, 6, 4, isDraggable=True, isResizable=True, moved=False),
 
-        layout_grid = [
-            dashboard.Item("step0", 0, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step1", 6, 0, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step2", 0, 1, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step3", 6, 1, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step4", 0, 2, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step5", 6, 2, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step6", 0, 3, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step7", 6, 3, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step8", 0, 4, 6, 4, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step9", 6, 4, 6, 4, isDraggable=True, isResizable=True, moved=False),
-
-            # dashboard.Item("a_text", 0, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
-            # dashboard.Item("a_image", 4, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
-            # dashboard.Item("a_video", 8, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
-        ]
+        # dashboard.Item("a_text", 0, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+        # dashboard.Item("a_image", 4, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+        # dashboard.Item("a_video", 8, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
+    ]
 
     return layout_grid
 
