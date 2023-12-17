@@ -5,6 +5,8 @@ import components.card as cc
 import components.layout as cl
 import components.sidebar as cs
 
+import src.texts as srct
+
 
 # ページ設定
 def set_page_config():
@@ -53,7 +55,7 @@ def view_contents_sample():
         with elements("contents"):
 
             with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-                cc.view_selected_media_card(cs.get_value_from_the_session_state("media"))
+                cc.view_selected_media_card(cs.get_value_from_the_session_state("media"), srct.abstract_list0, "sample")
 
 
 def view_contents_recipe1():
