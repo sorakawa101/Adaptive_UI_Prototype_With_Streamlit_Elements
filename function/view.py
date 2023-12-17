@@ -1,11 +1,11 @@
+# コンテンツを表示する関数ファイル
+
 import streamlit as st
 from streamlit_elements import elements, dashboard
 
 import components.card as cc
 import components.layout as cl
 import components.sidebar as cs
-
-import src.texts as srct
 
 
 # ページ設定

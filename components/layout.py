@@ -1,5 +1,4 @@
 # レイアウトのパラメータを定義するファイル
-import streamlit as st
 from streamlit_elements import dashboard
 
 
@@ -46,10 +45,10 @@ def get_layout_grid(recipe):
     if recipe == "demo_recipe":
 
         layout_grid = [
-            dashboard.Item("step0", 0, 0, 4, 3, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step1", 4, 0, 4, 3, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step2", 0, 1, 4, 3, isDraggable=True, isResizable=True, moved=False),
-            dashboard.Item("step3", 4, 1, 4, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step0", 0, 0, 6, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step1", 6, 0, 6, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step2", 0, 1, 6, 3, isDraggable=True, isResizable=True, moved=False),
+            dashboard.Item("step3", 6, 1, 6, 3, isDraggable=True, isResizable=True, moved=False),
 
             # dashboard.Item("a_text", 0, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),
             # dashboard.Item("a_image", 4, 0, 4, 6, isDraggable=True, isResizable=True, moved=False),

@@ -1,4 +1,4 @@
-import streamlit as st
+# srcからのget関数ファイル
 
 import src.texts as srct
 

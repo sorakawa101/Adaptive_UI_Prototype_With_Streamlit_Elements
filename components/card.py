@@ -1,5 +1,4 @@
 # Cardのパラメータを定義するファイル
-import streamlit as st
 from streamlit_elements import mui, media
 
 import function.func as ff

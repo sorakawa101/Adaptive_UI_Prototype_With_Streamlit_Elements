@@ -1,4 +1,5 @@
-import streamlit as st
+# Indexファイル
+
 import function.view as fv
 
 
