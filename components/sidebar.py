@@ -21,8 +21,8 @@ def sidebar():
         font_size = input_font_size()
         set_value_to_the_session_state("font_size", font_size)
 
-        color = input_color()
-        set_value_to_the_session_state("color", color)
+        font_color = input_font_color()
+        set_value_to_the_session_state("font_color", font_color)
 
         task_feature_set = input_task_feature_set()
         set_value_to_the_session_state("task_feature_set", task_feature_set)
@@ -43,7 +43,7 @@ def sidebar_io_result():
         st.write("①："+str(get_value_from_the_session_state("media")))
         st.write("②："+str(get_value_from_the_session_state("layout")))
         st.write("③："+str(get_value_from_the_session_state("font_size")))
-        st.write("④："+str(get_value_from_the_session_state("color")))
+        st.write("④："+str(get_value_from_the_session_state("font_color")))
         st.write("⑤："+str(get_value_from_the_session_state("task_feature_set")))
 
 
@@ -109,12 +109,12 @@ def input_font_size():
 
 
 # colorの入力欄を設置し，入力値を返す関数
-def input_color():
-    color = st.color_picker(
-        "④ 色を指定", "#00f900"
+def input_font_color():
+    font_color = st.color_picker(
+        "④ 色を指定", "#000000"
     )  # st.color_pecker(label, first-value)
 
-    return color
+    return font_color
 
 
 # task_feature_setの入力欄を設置し，入力値を返す関数

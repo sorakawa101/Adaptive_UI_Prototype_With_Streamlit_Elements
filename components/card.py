@@ -4,19 +4,19 @@ from streamlit_elements import mui, media, html
 import function.func as ff
 
 # Single ColumnとGrid用の表示関数
-def view_selected_media_card(media_list, task_feature_set, font_size, recipe):
+def view_selected_media_card(media_list, task_feature_set, font_size, font_color, recipe):
     if recipe == "sample":
         recipe_steps = 4
     else:
         recipe_steps = 0
 
     for i in range(recipe_steps):
-        set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, "image"+str(i), "video"+str(i))
+        set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, font_color, "image"+str(i), "video"+str(i))
 
 
 # Full Screen用の表示関数
-def view_selected_media_card_on_tab(media_list, task_feature_set, font_size, image, video, recipe, i):
-    set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, image, video)
+def view_selected_media_card_on_tab(media_list, task_feature_set, font_size, font_color, image, video, recipe, i):
+    set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, font_color, image, video)
 
 
 # * デモ用のカード
@@ -29,8 +29,8 @@ def card_demo(kw):
 
 
 # * 手順カード
-def set_card_step(kw, media_list, text, text_size, image, video):
-    with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column"}):
+def set_card_step(kw, media_list, text, text_size, text_color, image, video):
+    with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column", "color":f'{text_color}'}):
         mui.CardHeader(title=kw)
         if "Text" in media_list:
             with mui.CardContent():
