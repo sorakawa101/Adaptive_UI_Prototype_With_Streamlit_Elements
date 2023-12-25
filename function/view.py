@@ -32,7 +32,7 @@ def view_contents():
 def view_contents_tab_element(recipe, i):
     with elements("contents"+str(i)):
         with dashboard.Grid(cl.get_selected_layout(cs.get_value_from_the_session_state("layout"))):
-            cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), cs.get_value_from_the_session_state("font_size"), cs.get_value_from_the_session_state("font_color"), "image"+str(i), "video"+str(i), recipe, i)
+            cc.view_selected_media_card_on_tab(cs.get_value_from_the_session_state("media"), cs.get_value_from_the_session_state("task_feature_set"), cs.get_value_from_the_session_state("font_size"), cs.get_value_from_the_session_state("font_color"), recipe, i)
 
 
 # サンプルレシピを表示する関数
