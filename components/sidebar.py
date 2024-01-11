@@ -81,8 +81,8 @@ def input_recipe():
 def input_media():
     media = st.multiselect(
         "① 必要なメディアを選択(複数可)",
-        ["Text", "Image", "Video"],
-        ["Text", "Image", "Video"],
+        ["Text", "Image", "Video", "Voice"],
+        ["Text", "Image", "Video", "Voice"],
     )  # st.multiselect(label, selected, first-value)
 
     return media

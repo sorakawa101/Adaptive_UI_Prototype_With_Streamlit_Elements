@@ -5,10 +5,10 @@ import function.func as ff
 
 # Single ColumnとGrid用の表示関数
 def view_selected_media_card(media_list, task_feature_set, font_size, font_color, recipe):
-    if recipe == "sample":
-        recipe_steps = 4
-    else:
-        recipe_steps = 10
+    # if recipe == "sample":
+    #     recipe_steps = 4
+    # else:
+    recipe_steps = 10
 
     for i in range(recipe_steps):
         set_card_step("step"+str(i), media_list, ff.get_texts(recipe, task_feature_set)[i], font_size, font_color, ff.get_images(recipe)[i], ff.get_videos(recipe)[i])
