@@ -32,10 +32,15 @@ def card_demo(kw):
 def set_card_step(kw, media_list, text, text_size, text_color, image_url, video_url):
     with mui.Card(key=kw, sx={"display": "flex", "flexDirection": "column", "color":f'{text_color}'}):
         # mui.CardHeader(title=kw)
-        if "Text" in media_list:
-            with mui.CardContent():
-                with mui.Typography:
-                    set_card_step_text_size(text, text_size)
+        with mui.CardContent(sx={"display": "flex", "flexDirection": "row"}):
+            if "Text" in media_list:
+                with mui.CardContent():
+                    with mui.Typography:
+                        set_card_step_text_size(text, text_size)
+            if "Voice" in media_list:
+                with mui.Button:
+                    mui.icon.VolumeUp(sx={"color": "black", "font-size":"50px"})
+
 
         with mui.CardContent(sx={"display": "flex", "flexDirection": "row", "height": "100%"}):
             if "Image" in media_list:
